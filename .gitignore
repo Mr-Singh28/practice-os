@@ -1,0 +1,39 @@
+# Dependencies and package-manager caches
+node_modules/
+.npm/
+.npm-cache/
+
+# Next.js output
+.next/
+out/
+*.tsbuildinfo
+
+# Local environment files (the documented template remains tracked)
+.env*
+!.env.example
+
+# Vercel local linkage and deployment state
+.vercel/
+
+# Supabase local state
+supabase/.branches/
+supabase/.temp/
+
+# Test output
+coverage/
+playwright-report/
+test-results/
+.eslintcache
+
+# Local tools, logs, and operating-system files
+.tools/
+*.log
+.DS_Store
+Thumbs.db
+
+# Secret-bearing file formats
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json

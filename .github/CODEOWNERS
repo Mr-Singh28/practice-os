@@ -1,0 +1,8 @@
+# Ownership is intentionally inactive until the repository owner approves real
+# GitHub user or team handles. Branch protection must still require at least one
+# independent human approval.
+#
+# To activate repository-wide ownership, replace the commented example with an
+# approved user or team. Do not commit a fabricated or unverified owner.
+# * @approved-organisation/approved-maintainers
+

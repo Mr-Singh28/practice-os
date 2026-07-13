@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-13T16:42:16+05:30",
+  "workspace": "G:\\Practice OS",
+  "finalReadiness": {
+    "status": "AMBER",
+    "label": "AMBER — local foundation prepared; user actions or external approvals remain",
+    "reason": "Local application, database, tests, security checks, CI configuration, and documentation pass; workstation runtime alignment and hosted account approvals remain."
+  },
+  "initialState": {
+    "git": {
+      "status": "PASS",
+      "branch": "main",
+      "commits": 0,
+      "remotes": 0,
+      "trackedFiles": 0
+    },
+    "existingFoundationFiles": [
+      ".gitignore",
+      ".nvmrc",
+      "package.json",
+      "package-lock.json",
+      "tsconfig.json",
+      "vitest.config.mts",
+      "tests/unit/environment.test.ts",
+      "tests/unit/readiness.test.ts"
+    ],
+    "baselineClassification": "FAIL",
+    "baselineReason": "Application modules, lint configuration, Supabase project, CI, deployment preparation, and documentation were missing."
+  },
+  "tooling": {
+    "configuredNode": {
+      "status": "PASS",
+      "value": "24 LTS",
+      "engine": ">=24.0.0 <25"
+    },
+    "verificationNode": {
+      "status": "PASS",
+      "value": "24.14.0"
+    },
+    "defaultShellNode": {
+      "status": "USER ACTION REQUIRED",
+      "value": "20.18.0"
+    },
+    "configuredNpm": {
+      "status": "PASS",
+      "value": "11.16.0"
+    },
+    "defaultShellNpm": {
+      "status": "USER ACTION REQUIRED",
+      "value": "10.8.2"
+    },
+    "lockfile": {
+      "status": "PASS",
+      "version": 3,
+      "cleanInstall": "PASS"
+    },
+    "docker": {
+      "status": "PASS",
+      "clientVersion": "29.5.2",
+      "engineVersion": "29.5.2"
+    },
+    "supabaseCli": {
+      "status": "PASS",
+      "repositoryVersion": "2.109.1",
+      "globalVersion": "2.75.0",
+      "note": "Repository scripts resolve the pinned native CLI."
+    },
+    "githubCli": {
+      "status": "BLOCKED",
+      "reason": "Command not installed."
+    },
+    "vercelCli": {
+      "status": "BLOCKED",
+      "reason": "Command not installed."
+    }
+  },
+  "checks": [
+    {
+      "id": "format",
+      "status": "PASS",
+      "command": "npm run format:check"
+    },
+    {
+      "id": "lint",
+      "status": "PASS",
+      "command": "npm run lint"
+    },
+    {
+      "id": "typecheck",
+      "status": "PASS",
+      "command": "npm run typecheck"
+    },
+    {
+      "id": "unit-tests",
+      "status": "PASS",
+      "command": "npm run test:unit",
+      "files": 3,
+      "tests": 7
+    },
+    {
+      "id": "build",
+      "status": "PASS",
+      "command": "npm run build",
+      "framework": "Next.js 16.2.10"
+    },
+    {
+      "id": "verify",
+      "status": "PASS",
+      "command": "npm run verify"
+    },
+    {
+      "id": "playwright-smoke",
+      "status": "PASS",
+      "command": "npm run test:e2e:smoke",
+      "browser": "chromium",
+      "tests": 1
+    },
+    {
+      "id": "supabase-status",
+      "status": "PASS",
+      "credentialOutput": "suppressed"
+    },
+    {
+      "id": "migration-replay",
+      "status": "PASS",
+      "target": "local only"
+    },
+    {
+      "id": "seed",
+      "status": "PASS",
+      "data": "deterministic synthetic foundation row"
+    },
+    {
+      "id": "database-tests",
+      "status": "PASS",
+      "framework": "pgTAP",
+      "tests": 6
+    },
+    {
+      "id": "database-types",
+      "status": "PASS",
+      "path": "lib/supabase/database.types.ts"
+    },
+    {
+      "id": "secret-scan",
+      "status": "PASS",
+      "valuesPrinted": false
+    },
+    {
+      "id": "dependency-audit-high-threshold",
+      "status": "PASS",
+      "moderateFindings": 2,
+      "knownPackage": "postcss@8.4.31 via next@16.2.10"
+    },
+    {
+      "id": "github-authentication",
+      "status": "NOT TESTED",
+      "reason": "GitHub CLI unavailable and no approved account context."
+    },
+    {
+      "id": "github-remote",
+      "status": "USER ACTION REQUIRED",
+      "reason": "No remote exists and remote mutation was not approved."
+    },
+    {
+      "id": "branch-protection",
+      "status": "USER ACTION REQUIRED"
+    },
+    {
+      "id": "vercel-authentication",
+      "status": "NOT TESTED",
+      "reason": "Vercel CLI unavailable and no approved account context."
+    },
+    {
+      "id": "vercel-project-link",
+      "status": "USER ACTION REQUIRED",
+      "reason": ".vercel/project.json is absent."
+    },
+    {
+      "id": "production-mutation",
+      "status": "NOT APPLICABLE",
+      "reason": "Explicitly out of scope."
+    }
+  ],
+  "environmentVariables": {
+    "processNamesPresent": [],
+    "templateStatus": "PASS",
+    "localMode": "limited",
+    "browserSafe": [
+      "NEXT_PUBLIC_APP_ENV",
+      "NEXT_PUBLIC_APP_URL",
+      "NEXT_PUBLIC_SUPABASE_URL",
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY"
+    ],
+    "serverOnly": ["SUPABASE_SERVICE_ROLE_KEY"],
+    "localOrApprovedCi": ["SUPABASE_PROJECT_REF", "SUPABASE_DB_PASSWORD"],
+    "vercelLinkOrApprovedCi": ["VERCEL_PROJECT_ID", "VERCEL_ORG_ID"]
+  },
+  "externalApprovals": [
+    {
+      "system": "GitHub",
+      "status": "USER ACTION REQUIRED",
+      "actions": [
+        "authenticate approved account",
+        "choose repository owner/name/visibility",
+        "create or attach remote",
+        "push reviewed history",
+        "apply branch protection",
+        "configure secret names if later required"
+      ]
+    },
+    {
+      "system": "Supabase",
+      "status": "USER ACTION REQUIRED",
+      "actions": [
+        "choose organisation, projects, region and plan",
+        "assign secret/dashboard/recovery owners",
+        "authenticate",
+        "link approved development/staging project",
+        "approve any hosted migration push"
+      ]
+    },
+    {
+      "system": "Vercel",
+      "status": "USER ACTION REQUIRED",
+      "actions": [
+        "install CLI",
+        "choose account/team/project and plan",
+        "authenticate",
+        "link project",
+        "enter isolated environment variables",
+        "approve Preview deployment when needed"
+      ]
+    }
+  ],
+  "knownLimitations": [
+    "Default PATH still resolves an unsupported Node 20 runtime.",
+    "GitHub and Vercel CLIs are unavailable.",
+    "No Git remote or hosted project link exists.",
+    "Two moderate PostCSS audit findings remain through the latest Next.js release.",
+    "The G: volume produces non-failing filesystem performance warnings."
+  ],
+  "scopeConfirmation": {
+    "productFeatureImplemented": false,
+    "linearConfigured": false,
+    "ponytailConfigured": false,
+    "claudeOrAnthropicConfigured": false,
+    "automatedAiReviewerConfigured": false,
+    "productionModified": false,
+    "externalMutationWithoutApproval": false,
+    "commitCreated": false
+  }
+}

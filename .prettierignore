@@ -1,0 +1,9 @@
+.next/
+.npm-cache/
+.tools/
+coverage/
+node_modules/
+package-lock.json
+playwright-report/
+test-results/
+lib/supabase/database.types.ts

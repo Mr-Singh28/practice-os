@@ -1,0 +1,62 @@
+{
+  "name": "practice-os",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Execution-ready foundation for Practice OS.",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "packageManager": "npm@11.16.0",
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "fsevents@2.3.2": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run test:unit",
+    "test:unit": "vitest run",
+    "test:e2e": "node scripts/run-playwright.mjs test",
+    "test:e2e:smoke": "node scripts/run-playwright.mjs test --grep @smoke",
+    "playwright:install": "node scripts/run-playwright.mjs install chromium",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit && npm run build && npm run supabase:verify",
+    "supabase:start": "node scripts/run-supabase.mjs start",
+    "supabase:stop": "node scripts/run-supabase.mjs stop",
+    "supabase:status": "node scripts/run-supabase.mjs status",
+    "supabase:reset": "node scripts/run-supabase.mjs reset",
+    "supabase:test": "node scripts/run-supabase.mjs test",
+    "supabase:types": "node scripts/run-supabase.mjs types",
+    "supabase:verify": "node scripts/supabase-verify.mjs",
+    "security:audit": "npm audit --audit-level=high",
+    "security:secrets": "node scripts/check-secrets.mjs",
+    "security:check": "npm run security:secrets && npm run security:audit",
+    "preview:verify": "node scripts/verify-deployment.mjs --environment preview",
+    "deployment:verify": "node scripts/verify-deployment.mjs --environment production"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.110.2",
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.10",
+    "prettier": "3.9.5",
+    "supabase": "2.109.1",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  }
+}
