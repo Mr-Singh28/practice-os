@@ -6,3 +6,5 @@
 # approved user or team. Do not commit a fabricated or unverified owner.
 # * @approved-organisation/approved-maintainers
 
+# Default owner for all repository changes
+* @Mr-Singh28
