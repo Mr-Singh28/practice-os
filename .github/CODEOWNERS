@@ -5,4 +5,5 @@
 # To activate repository-wide ownership, replace the commented example with an
 # approved user or team. Do not commit a fabricated or unverified owner.
 # * @approved-organisation/approved-maintainers
-
+# All changes require review from the repository owner
+* @Mr-Singh28
